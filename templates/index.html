@@ -4,60 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>House Price Prediction</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <header>
-        <h1>House Price Prediction</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">House Price Prediction</a>
+            </div>
+        </nav>
     </header>
     <main>
-        <p>Welcome to House Price Prediction Model!</p>
-
-        <!-- Form for input fields -->
-        
-<form id="predictionForm">
-    <label for="beds">Bedrooms:</label>
-    <select id="beds" name="beds">
-        <option value="" disabled selected>Select number of bedrooms</option>
-        {% for bedroom in bedrooms %}
-            <option value="{{ bedroom }}">{{ bedroom }}</option>
-        {% endfor %}
-    </select>
-
-    <label for="baths">Baths:</label>
-    <select id="baths" name="baths">
-        <option value="" disabled selected>Select number of bathrooms</option>
-        {% for bathroom in bathrooms %}
-            <option value="{{ bathroom }}">{{ bathroom }}</option>
-        {% endfor %}
-    </select>
-
-    <label for="size">Size:</label>
-    <select id="size" name="size">
-        <option value="" disabled selected>Select size of the house</option>
-        {% for house_size in sizes %}
-            <option value="{{ house_size }}">{{ house_size }} sqft</option>
-        {% endfor %}
-    </select>
-
-    <label for="zip_code">Zip Code:</label>
-    <select id="zip_code" name="zip_code">
-        <option value="" disabled selected>Select zip code</option>
-        {% for zip_code in zip_codes %}
-            <option value="{{ zip_code }}">{{ zip_code }}</option>
-        {% endfor %}
-    </select>
-
-    <!-- Predict Price button -->
-    <button type="button" onclick="sendData()">Predict Price</button>
-
-    <!-- Space for displaying predicted price -->
-    <div id="predictedPrice"></div>
-</form>
-
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1 class="display-4">Welcome to House Price Prediction Model!</h1>
+                <p class="lead">Fill out the details below to predict the house price.</p>
+            </div>
+            <form id="predictionForm">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="beds" class="font-weight-bold text-dark">Bedrooms</label>
+                        <select id="beds" name="beds" class="form-control">
+                            <option value="" disabled selected>Select number of bedrooms</option>
+                            {% for bedroom in bedrooms %}
+                                <option value="{{ bedroom }}">{{ bedroom }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="baths" class="font-weight-bold text-dark">Bathrooms</label>
+                        <select id="baths" name="baths" class="form-control">
+                            <option value="" disabled selected>Select number of bathrooms</option>
+                            {% for bathroom in bathrooms %}
+                                <option value="{{ bathroom }}">{{ bathroom }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="size" class="font-weight-bold text-dark">Size (sqft)</label>
+                        <select id="size" name="size" class="form-control">
+                            <option value="" disabled selected>Select size of the house</option>
+                            {% for house_size in sizes %}
+                                <option value="{{ house_size }}">{{ house_size }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="zip_code" class="font-weight-bold text-dark">Zip Code</label>
+                        <select id="zip_code" name="zip_code" class="form-control">
+                            <option value="" disabled selected>Select zip code</option>
+                            {% for zip_code in zip_codes %}
+                                <option value="{{ zip_code }}">{{ zip_code }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <button type="button" onclick="sendData()" class="btn btn-primary btn-lg btn-block">Predict Price</button>
+            </form>
+            <div id="predictedPrice" class="mt-4 text-center text-dark font-weight-bold"></div>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2024 House Price Prediction. All rights reserved.</p>
+    <footer class="footer bg-dark text-white">
+        <div class="container text-center">
+            <span>&copy; 2024 House Price Prediction. All rights reserved.</span>
+        </div>
     </footer>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
