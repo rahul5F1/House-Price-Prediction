@@ -1,61 +1,121 @@
+/* Custom CSS for styling text and layout */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333; /* Change text color to a darker shade */
+    background-color: #fff; /* Change background color to white */
+    overflow: hidden; /* Hide overflow to prevent horizontal scrollbars */
+    background-image: url('beautiful_house_image.jpg'); /* Add background image */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    background-position: center; /* Center the background image */
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+/* Gradient animation for the background */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Apply the gradient animation to the body */
+body {
+    animation: gradientAnimation 10s ease infinite; /* Apply animation */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); /* Define gradient colors */
+    background-size: 400% 400%; /* Define gradient size */
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
+/* Container styles */
+.container {
+    margin-top: 50px;
+}
+
+/* Jumbotron styles */
+.jumbotron {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    color: #333;
+    padding: 2rem;
+    border-radius: 0.3rem;
+}
+
+.jumbotron h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.jumbotron p {
+    font-size: 1.2rem;
+}
+
+/* Form styles */
+.form-group label {
+    font-weight: bold;
+    font-size: 1.5rem; /* Increased font size for input labels */
+    color: #555; /* Change input label color to a darker shade */
+    transition: all 0.3s ease; /* Add transition effect */
+}
+
+.form-group label:hover {
+    color: #007bff; /* Change color on hover */
+    transform: scale(1.05); /* Scale up slightly on hover */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3); /* Add shadow on hover */
+}
+
+.form-control {
+    border: 2px solid #007bff;
+    font-size: 1rem;
+    border-radius: 0; /* Remove border radius */
+    color: #333; /* Change input text color to a darker shade */
+}
+
+.form-control:focus {
+    border-color: #2228e0;
+    box-shadow: none;
+}
+
+/* Mouse events for select elements */
+select.form-control:hover {
+    border-color: #530adb;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3); /* Add shadow on hover */
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 1.1rem;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Footer styles */
+.footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    color: #ccc;
+    font-size: 0.9rem;
 }
 
-/* Add styling for the form */
-form {
-    margin-top: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-}
-
-select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-}
-
-button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-/* Style for displaying the predicted price */
+/* Additional styling for prediction output */
 #predictedPrice {
     margin-top: 20px;
-    font-weight: bold;
+    font-size: 2rem; /* Increased font size */
+    animation: fadeInDown 1s ease;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 15px; /* Add padding */
+    border-radius: 5px; /* Add border radius */
+    transition: all 0.5s ease; /* Add transition for dynamic changes */
 }
