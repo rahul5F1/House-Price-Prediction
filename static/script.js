@@ -1,3 +1,4 @@
+// JavaScript code here
 // Fetch options for each dropdown on page load
 window.onload = function() {
     fetchOptions('/bedrooms', 'beds');
