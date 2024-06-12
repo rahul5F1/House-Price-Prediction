@@ -102,15 +102,19 @@ app = Flask(__name__)
 
 # Define your routes and other Flask-related code here
 
-def find_available_port():
+def find_available_port(start_port=8000, max_port=9000):
     """
     Find an available port dynamically.
     """
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.bind(('localhost', 0))
-    port = s.getsockname()[1]
-    s.close()
-    return port
+    for port in range(start_port, max_port + 1):
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        try:
+            s.bind(('localhost', port))
+            s.close()
+            return port
+        except OSError:
+            pass
+    raise RuntimeError("No available ports found")
 
 if __name__ == "__main__":
     port = find_available_port()
