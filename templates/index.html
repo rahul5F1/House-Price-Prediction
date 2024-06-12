@@ -11,11 +11,23 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">House Price Prediction</a>
                 <!-- GitHub Logo -->
                 <a href="https://github.com/rahul5F1/Mini-Group-Project/tree/main" target="_blank" rel="noopener noreferrer" class="github-link">
                     <img src="https://icon-library.com/images/github-icon-white/github-icon-white-5.jpg" alt="GitHub Logo" class="github-logo">
                 </a>
+                <a class="navbar-brand mx-auto" style="align-self: center;" href="#">House Price Prediction</a>
+                <!-- Menu Button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <!-- Menu Items -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutModal">About</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -76,6 +88,43 @@
             <span>&copy; 2024 House Price Prediction. All rights reserved.</span>
         </div>
     </footer>
+    <!-- About Modal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="aboutModalLabel" style="color:#007bff;">House Price Prediction</h2>
+                    <button type="button" class="close" style="color: white;" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>We all have experienced a time when we have to look up for a new house to buy. But then the journey begins with a lot of frauds, negotiating deals, researching the local areas and so on. So to deal with this kind of issues Today we will be preparing a MACHINE LEARNING Based model, trained on the House Price Prediction Dataset.</p>
+                    <section>
+                        <h5 style="color:#007bff;">Procedure</h5>
+                        <ul>
+                            <li><strong>Step - 1:</strong> The dataset is taken from Kaggle, instead we can create a csv file that containing the attributes and values just like the dataset from kaggle is having. The dataset undergoes cleaning to handle missing values, categorical data, and other preprocessing steps inorder to get the prediction (output) accurately without fail.</li>
+                            <li><strong>Step - 2:</strong> Now should implement the learning model by choosing any of the 3 methods (i.e., Linear Regression, Lasso Regression, Ridge Regression). Among those 3 methods we'll get to know that Ridge Regression method will be the right one to implement becuase of its better accuracy compred with rest of the two methods. So, the machine learning model is implemented using Ridge regression, leveraging the scikit-learn library. The trained model is saved for later use.</li>
+                            <li><strong>Step - 3:</strong> The project incorporates a Flask web application, providing a user-friendly interface for predicting house prices. Users can input details such as the number of bedrooms, bathrooms, house size, and zip code to receive a price prediction.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h5 style="color:#007bff;">Softwares used</h5>
+                        <ol>
+                            <li>Python (Version 3.12.4)</li>
+                            <li>VisualStudio Code (to execute main python code, html, css & javascript codes for web page)</li>
+                            <li>pip (for importing pandas, numpy)</li>
+                            <li>scikit-learn (for importing 3 regression methods)</li>
+                            <li>Flask (for user friendly interface)</li>
+                        </ol>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
