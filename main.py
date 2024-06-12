@@ -47,7 +47,12 @@ def predict():
     return str(prediction)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8080, use_reloader=False)
+    app.run(debug=True, port=5000)
+
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5000)
+
 
 
 
