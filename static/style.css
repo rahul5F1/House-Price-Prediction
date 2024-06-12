@@ -1,4 +1,3 @@
-/* Custom CSS for styling text and layout */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -118,4 +117,28 @@ select.form-control:hover {
     padding: 15px; /* Add padding */
     border-radius: 5px; /* Add border radius */
     transition: all 0.5s ease; /* Add transition for dynamic changes */
+}
+
+/* GitHub Logo styles */
+.github-logo {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+}
+
+.github-link {
+    display: inline-block;
+    position: relative;
+}
+
+.github-link:hover .github-logo {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(10deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(10deg); }
+    80% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
 }
