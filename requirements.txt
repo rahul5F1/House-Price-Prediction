@@ -1,4 +1,5 @@
 streamlit
+pip
 Flask
 pandas
 pickle
