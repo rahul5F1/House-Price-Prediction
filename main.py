@@ -2,6 +2,7 @@ import streamlit as st
 from flask import Flask, render_template, request, jsonify
 import pandas as pd
 import pickle
+import socket
 
 app = Flask(__name__)
 data = pd.read_csv('final_dataset.csv')
@@ -97,12 +98,24 @@ def predict():
 
     return str(prediction)
 
-netstat -tuln  # Lists all listening ports
+app = Flask(__name__)
 
-lsof -i -P -n | grep LISTEN  # Lists all listening ports and associated processes
+# Define your routes and other Flask-related code here
+
+def find_available_port():
+    """
+    Find an available port dynamically.
+    """
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.bind(('localhost', 0))
+    port = s.getsockname()[1]
+    s.close()
+    return port
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5)
+    port = find_available_port()
+    print(f"Running on port {port}")
+    app.run(debug=True, port=port)
 
 
 
