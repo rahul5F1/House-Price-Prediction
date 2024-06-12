@@ -97,6 +97,10 @@ def predict():
 
     return str(prediction)
 
+netstat -tuln  # Lists all listening ports
+
+lsof -i -P -n | grep LISTEN  # Lists all listening ports and associated processes
+
 if __name__ == "__main__":
     app.run(debug=True, port=5)
 
