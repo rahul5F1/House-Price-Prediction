@@ -19,7 +19,7 @@ function sendData() {
     .then(response => response.text())
     .then(price => {
         const predictedPriceElement = document.getElementById("predictedPrice");
-        predictedPriceElement.innerHTML = "Price: INR " + price;
+        predictedPriceElement.innerHTML = "Price: $ " + price;
         
         // Add dynamic features and Bootstrap styles
         predictedPriceElement.classList.remove("animate__fadeInDown"); // Remove animation class
