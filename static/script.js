@@ -19,8 +19,11 @@ function sendData() {
     .then(response => response.text())
     .then(price => {
         const predictedPriceElement = document.getElementById("predictedPrice");
-        predictedPriceElement.innerHTML = "Price: $ " + price;
-        
+        if(price>0){
+            predictedPriceElement.innerHTML = "Price: $ " + price;
+        }else{
+            predictedPriceElement.innerHTML = "Please enter the valid requirements!";
+        }
         // Add dynamic features and Bootstrap styles
         predictedPriceElement.classList.remove("animate__fadeInDown"); // Remove animation class
         predictedPriceElement.style.backgroundColor = "#007bff"; // Change background color
@@ -45,4 +48,4 @@ function fetchOptions(endpoint, dropdownId) {
                 dropdown.appendChild(optionElement);
             });
         });
-}
+} 
