@@ -3,12 +3,14 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #fff; /* Change text color to white */
-    background-color: #fff; /* Change background color to white */
-    overflow: hidden; /* Hide overflow to prevent horizontal scrollbars */
+    overflow-x: hidden; /* Hide overflow to prevent horizontal scrollbars */
     background-image: url('beautiful_house_image.jpg'); /* Add background image */
     background-size: cover; /* Cover the entire background */
     background-repeat: no-repeat; /* Do not repeat the background image */
     background-position: center; /* Center the background image */
+    animation: gradientAnimation 10s ease infinite; /* Apply gradient animation */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); /* Define gradient colors */
+    background-size: 400% 400%; /* Define gradient size */
 }
 
 /* Gradient animation for the background */
@@ -22,13 +24,6 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
-
-/* Apply the gradient animation to the body */
-body {
-    animation: gradientAnimation 10s ease infinite; /* Apply animation */
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); /* Define gradient colors */
-    background-size: 400% 400%; /* Define gradient size */
 }
 
 /* Container styles */
