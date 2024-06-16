@@ -8,9 +8,9 @@ This repository contains a simple House Price Prediction model implemented using
 
 _Step - 1_: The dataset is taken from Kaggle, instead we can create a csv file that containing the attributes and values just like the dataset from kaggle is having. The dataset undergoes cleaning to handle missing values, categorical data, and other preprocessing steps inorder to get the prediction (output) accurately without fail.
 
-_Step - 2_: Now should implement the learning model by choosing any of the 3 methods (i.e., Linear Regression, Lasso Regression, Ridge Regression). Among those 3 methods we'll get to know that Ridge Regression method will be the right one to implement becuase of its better accuracy compred with rest of the two methods. So, the machine learning model is implemented using Ridge regression, leveraging the scikit-learn library. The trained model is saved for later use.
+_Step - 2_: Now should implement the learning model by choosing any of the 3 methods (i.e., Linear Regression, Lasso Regression, Ridge Regression). Among those 3 methods we'll get to know that Ridge Regression method will be the right one to implement becuase of its better accuracy compared with rest of the two methods. So, the machine learning model is implemented using Ridge regression, leveraging the scikit-learn library. The trained model is saved for later use.
 
-_Step - 3_: The project incorporates a Flask web application, providing a user-friendly interface for predicting house prices. Users can input details such as the number of bedrooms, bathrooms, house size, and zip code to receive a price prediction.
+_Step - 3_: The project incorporates a Flask web application, providing a user-friendly interface for predicting house prices. Users can input details such as selectingthe location, number of bedrooms & bathrooms, and area in square feet to receive a price prediction.
 
 **Softwares used:**
 
